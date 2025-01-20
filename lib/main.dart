@@ -63,12 +63,4 @@ class MyApp extends StatelessWidget {
         ));
   }
 }
-class profile extends StatelessWidget
-{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }
-  
-}
+
