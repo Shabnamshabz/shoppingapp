@@ -101,3 +101,7 @@ class Cartpage extends StatelessWidget {
         ));
   }
 }
+class modal
+{
+  
+}
