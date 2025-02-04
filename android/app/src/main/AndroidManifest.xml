@@ -5,7 +5,7 @@
     <application
         android:label="Shopping World"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyATqzscXwckmXab0Vzm-Fu-_ByCnsg1H2M"/>
         <activity
