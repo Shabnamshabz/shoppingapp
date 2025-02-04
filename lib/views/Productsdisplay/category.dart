@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:projectshoppingapp/respository/product_repository.dart';
 import 'package:projectshoppingapp/views/Productsdisplay/individual_productdisplay_mainpage.dart';
 
 import '../../modal/productmodal.dart';
@@ -69,7 +68,7 @@ class _CategoryDisplayPageState extends State<CategoryDisplayPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              ProductDisplayMainPage(productdata: data![index]),
+                              ProductDisplayMainPage(productdata: data[index]),
                         )); //snapshot.data![index] means the first index is of datatype productmodal,that can be passed instead of sending each data in productmodal individually
                   },
                   child: SingleChildScrollView(
@@ -77,13 +76,13 @@ class _CategoryDisplayPageState extends State<CategoryDisplayPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Image(
-                          image: NetworkImage(data![index].pimage!),
+                          image: NetworkImage(data[index].pimage!),
                           width: 400,
                           height: 170,
                           fit: BoxFit.fitHeight,
                         ),
                         Center(
-                            child: Text(data![index].pname!,
+                            child: Text(data[index].pname!,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16))),
@@ -94,19 +93,19 @@ class _CategoryDisplayPageState extends State<CategoryDisplayPage> {
                           children: [
                             Center(
                                 child: Text(
-                              "${data![index].pprice!}aed",
+                              "${data[index].pprice!}aed",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 16),
                             )),
                             IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    bool selected = true; //snapshot
+                                    //bool selected = true; //snapshot
                                   });
                                   UserFirestoreRepository favourite =
                                       UserFirestoreRepository();
                                   favourite
-                                      .addusersfavouriteproduct(data![index]);
+                                      .addusersfavouriteproduct(data[index]);
                                 },
                                 icon: Icon(
                                   Icons.favorite,
